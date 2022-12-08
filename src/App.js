@@ -1,6 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import React, { Suspense, lazy } from "react";
+import Counter from "./components/Counter/Counter";
+import Modalochka from "./components/Modalochka/Modalochka";
 const AccordionPage = lazy(() =>
   import("./pages/AccordionItem/AccordionPage.jsx")
 );
@@ -13,6 +15,7 @@ export function App() {
     <>
     <Suspense>
       <Routes>
+
         <Route path="/" element={<Layout />}>
           <Route path="/accordion" element={<AccordionPage />} />
           <Route path="/faq" element={<FAQPage />} />
@@ -21,6 +24,8 @@ export function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
+      <Counter/>
+      <Modalochka/>
       </Suspense>
     </>
   );
