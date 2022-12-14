@@ -3,6 +3,7 @@ import Layout from "./components/Layout/Layout";
 import React, { Suspense, lazy } from "react";
 import Counter from "./components/Counter/Counter";
 import Modalochka from "./components/Modalochka/Modalochka";
+import ToDoList from "./components/ToDoList/ToDoList";
 const AccordionPage = lazy(() =>
   import("./pages/AccordionItem/AccordionPage.jsx")
 );
@@ -24,6 +25,7 @@ export function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
+      <ToDoList/>
       <Counter/>
       <Modalochka/>
       </Suspense>
